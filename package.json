@@ -1,0 +1,23 @@
+{
+  "name": "smartshop",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "dev:api": "turbo dev --filter=@smartshop/api",
+    "dev:web": "turbo dev --filter=@smartshop/web",
+    "dev:mcp": "turbo dev --filter=@smartshop/mcp-*",
+    "db:seed": "bun run --filter=@smartshop/api db:seed",
+    "lint": "turbo lint",
+    "clean": "turbo clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "bun@1.1.0"
+}
